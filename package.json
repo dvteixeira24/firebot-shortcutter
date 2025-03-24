@@ -2,6 +2,7 @@
   "name": "firbot-shortcutter",
   "author": "dd.ddd",
   "license": "GPL-3.0-only",
+  "version": "0.0.1",
   "scripts": {
     "dev": "cross-env NODE_ENV=development vike dev",
     "build": "cross-env NODE_ENV=production vike build",
