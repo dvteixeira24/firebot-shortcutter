@@ -52,13 +52,13 @@ You will need a node compatible js runtime. I do not package an executable for t
 2. Download the latest dist from releases.
 3. Configure the HOSTNAME and PORT in the ".env" file in the server folder.
 
-| VAR                                                   | DEF                                                             |
-| ----------------------------------------------------- | --------------------------------------------------------------- |
-| FIREBOT_DATA_DIR="%AppData%\Firebot\v5\profiles\Main" | Firebot profile dir                                             |
-| HOSTNAME="192.168.1.100"                              | IP address to bind to (you will access the app on this address) |
-| PORT="3000"                                           | Port it will run on                                             |
-| USE_SSL="true"                                        | Create self-signed certs (https is needed for screen wake lock) |
-| APP_STORE_PATH="appdb.json"                           | Where to store your data                                        |
+| VAR                                             | DEF                                                             |
+| ----------------------------------------------- | --------------------------------------------------------------- |
+| FIREBOT_API_URL="http://localhost:7472/api/v1/" | Firebot api base url                                            |
+| HOSTNAME="192.168.1.100"                        | IP address to bind to (you will access the app on this address) |
+| PORT="3000"                                     | Port it will run on                                             |
+| USE_SSL="true"                                  | Create self-signed certs (https is needed for screen wake lock) |
+| APP_STORE_PATH="appdb.json"                     | Where to store your data                                        |
 
 > Do not change NODE_ENV. The most important one to change is HOSTNAME to be the IP address of your pc on the local network to access it from your tablet/phone or whatever.
 
