@@ -1,4 +1,4 @@
-# bun run build
+bun run build
 # Define source and destination paths
 
 $source = ".\.env.example"
