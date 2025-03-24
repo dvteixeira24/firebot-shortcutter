@@ -102,7 +102,7 @@ export function Page() {
                     <AccordionTrigger>ARGUMENTS</AccordionTrigger>
                     <AccordionContent className="px-2">
                       <div>
-                        {currentPreset?.args.map(({ name }) => {
+                        {currentPreset?.args.map((name) => {
                           return (
                             <FormField
                               key={name}
@@ -120,24 +120,6 @@ export function Page() {
                             />
                           );
                         })}
-                      </div>
-                    </AccordionContent>
-                  </AccordionItem>
-                  <AccordionItem value="effects">
-                    <AccordionTrigger>
-                      {currentPreset?.effects.list.filter((effect) => effect.active).length} EFFECTS
-                    </AccordionTrigger>
-                    <AccordionContent className="px-2">
-                      <div>
-                        <ul className="list-inside">
-                          {currentPreset!.effects.list
-                            .filter((effect) => effect.active)
-                            .map((effect) => (
-                              <li className={"text-sm"} key={effect.id}>
-                                {effect.type}
-                              </li>
-                            ))}
-                        </ul>
                       </div>
                     </AccordionContent>
                   </AccordionItem>

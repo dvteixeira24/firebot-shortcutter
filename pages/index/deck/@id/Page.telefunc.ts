@@ -1,9 +1,8 @@
 import { Store, store } from "@/lib/store";
-import { readFileSync } from "node:fs";
-import { resolve } from "node:path";
 
 import { shield } from "telefunc";
 const t = shield.type;
+const FIREBOT_API_URL = process.env.FIREBOT_API_URL || "http://localhost:7472/";
 
 export const onGetConfig = shield([t.string], async (deckId: string) => {
   const deckConfig = (await store.getData(`/decks/${deckId}/deckConfig`)) as Store["decks"]["id"]["deckConfig"];
@@ -16,6 +15,4 @@ export const onGetDeckActions = shield([t.string], async (deckId: string) => {
 });
 
 export const onGetPresetEffectsList = async () =>
-  JSON.parse(
-    readFileSync(resolve(process.env.FIREBOT_DATA_DIR, "effects", "preset-effect-lists.json")).toString(),
-  ) as FirebotConfigData.json.PresetList;
+  (await (await fetch(FIREBOT_API_URL + "effects/preset")).json()) as FirebotApiData.Preset[];
