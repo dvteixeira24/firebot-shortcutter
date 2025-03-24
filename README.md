@@ -44,11 +44,33 @@ This project is a quick tool I built for myself to execute FireBot effect preset
 
 You will need a node compatible js runtime. I do not package an executable for the release. Bun or Node (>22) should both work.
 
-### Installation
+### Running
 
-#### Using the release dist (recommended)
+#### Using the release dist
 
-1. Download the latest release from releases
+1. Download [bun](https://bun.sh/) or [Node](https://nodejs.org/en/download) if you don't have either.
+2. Download the latest dist from releases.
+3. Configure the HOSTNAME and PORT in the ".env" file in the server folder.
+
+| VAR                                                   | DEF                                                             |
+| ----------------------------------------------------- | --------------------------------------------------------------- |
+| FIREBOT_DATA_DIR="%AppData%\Firebot\v5\profiles\Main" | Firebot profile dir                                             |
+| HOSTNAME="192.168.1.100"                              | IP address to bind to (you will access the app on this address) |
+| PORT="3000"                                           | Port it will run on                                             |
+| USE_SSL="true"                                        | Create self-signed certs (https is needed for screen wake lock) |
+| APP_STORE_PATH="appdb.json"                           | Where to store your data                                        |
+
+> Do not change NODE_ENV. The most important one to change is HOSTNAME to be the IP address of your pc on the local network to access it from your tablet/phone or whatever.
+
+4. Start the app with `bun ./server/index.mjs` or `node --env-file=".env" ./server/index.mjs`
+
+#### Using the repo
+
+1. Clone this repo
+2. Install [https://bun.sh/]
+3. Install deps `bun i`
+4. Create your .env according to the .env.example (put it in the root of the repo dir)
+5. `bun run build` then `bun run start`
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
