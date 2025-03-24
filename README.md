@@ -46,7 +46,9 @@ You will need a node compatible js runtime. I do not package an executable for t
 
 ### Installation
 
-UNDER CONSTRUCTION
+#### Using the release dist (recommended)
+
+1. Download the latest release from releases
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

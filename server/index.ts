@@ -3,6 +3,7 @@ import { telefunc } from "telefunc";
 import vike from "vike-node/express";
 import assert from "node:assert";
 import { createServer } from "node:https";
+import qrcodeTerminal from "qrcode-terminal";
 
 import "dotenv/config";
 import { getCerts } from "./certs";
@@ -46,10 +47,12 @@ async function startServer() {
       app,
     ).listen(port, hostname, () => {
       console.log(`HTTPS Server listening on https://${hostname}:${port}`);
+      qrcodeTerminal.generate(`https://${hostname}:${port}`);
     });
   } else {
     app.listen(port, hostname, () => {
       console.log(`Server listening on http://${hostname}:${port}`);
+      qrcodeTerminal.generate(`http://${hostname}:${port}`);
     });
   }
 
